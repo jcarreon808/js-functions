@@ -220,7 +220,24 @@ function isEven(n){
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
-
+function letterGrade (score, total){
+  var grade = score/total * 100;
+  if (grade>=90 && grade<=100){
+    return "A";
+  }
+  if (grade>=80 && grade<=89) {
+    return "B";
+  }
+  if (grade>=70 && grade<=79){
+    return "C";
+  }
+  if(grade>=60 && grade<70){
+    return "D";
+  }
+  if(grade>=0 && grade<=59){
+    return "F";
+  }
+}
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -230,6 +247,13 @@ function isEven(n){
  * @return {object} restaurant
  */
 
+ function incrementReviews(rest){
+  if (rest.reviews>0){
+  rest.reviews++;
+  }else{
+   rest.reviews = 1;
+  }return rest;
+ }
 
 /**
  * Joins two strings with a space.
@@ -237,6 +261,10 @@ function isEven(n){
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
+ function combine(word1, word2){
+  return word1 + " " + word2;
+
+}
 
 
 /**
@@ -247,3 +275,11 @@ function isEven(n){
  * @return {object} circle
  */
 
+function createCircle(radius){
+var circle= {};
+circle.circumference =2*Math.PI*radius;
+circle.area=Math.PI*radius*radius;
+
+  return circle;
+
+}

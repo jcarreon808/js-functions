@@ -80,7 +80,11 @@ console.log(divide(10,5));
  * @param {number} x, number to be squared
  * @return {number} squared
  */
-
+ function square (x){
+  var squared = x * x;
+  return squared;
+ }
+console.log(square(3));
 
 /**
  * Performs a mathematical operation on two numbers.
@@ -90,15 +94,41 @@ console.log(divide(10,5));
  * @param {number} y
  * @return {number} the result
  */
+function calculate(operation, x, y){
+  switch(operation){
+    case "add":
+    console.log( x + " + " + y + " = " + numberToString(add(x,y)));
+    return add(x,y);
+    break;
+    case "subtract":
+    console.log( x + " - " + y + " = " + numberToString(subtract(x,y)));
+    return subtract(x,y);
+    break;
+    case "multiply":
+    console.log( x + " * " + y + " = " + numberToString(multiply(x,y)));
+    return multiply(x,y);
+    break;
+    case "divide":
+    console.log( x + " / " + y + " = " + numberToString(divide(x,y)));
+    return divide(x,y);
+  }
+}
 
-
+console.log(calculate("divide",1,2));
+console.log(calculate("add",1,2));
 /**
  * Returns true if `a` is greater than `b`.
  * @param {number} a
  * @param {number} b
  * @return {boolean} `a` is larger than `b`
  */
-
+function isGreaterThan(a,b){
+  if(a>b){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 /**
  * Returns true if `a` is less than `b`.
@@ -106,7 +136,13 @@ console.log(divide(10,5));
  * @param {number} b
  * @return {boolean} `a` is smaller than `b`
  */
-
+function isLessThan(a,b){
+  if(a<b){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -115,6 +151,14 @@ console.log(divide(10,5));
  * @return {boolean} the numbers are equal
  */
 
+ function areEqual(a,b){
+  if(a===b){
+    return true;
+  }else{
+    return false;
+  }
+ }
+
 
 /**
  * Returns the smallest value of two numbers.
@@ -122,6 +166,9 @@ console.log(divide(10,5));
  * @param {number} y
  * @return {number} the smallest number
  */
+ function minimum(x,y){
+  return Math.min(x,y);
+ }
 
 
 /**
@@ -130,6 +177,9 @@ console.log(divide(10,5));
  * @param {number} y
  * @return {number} the largest number
  */
+ function maximum(x,y){
+  return Math.max(x,y);
+ }
 
 
 /**
@@ -137,13 +187,26 @@ console.log(divide(10,5));
  * @param {number} n
  * @return {boolean} the number is even
  */
-
+function isEven(n){
+  if(n%2===0){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 /**
  * Returns true if `n` is odd.
  * @param {number} n
  * @return {boolean} the number is odd
  */
+ function isOdd(n){
+  if(n%2===0){
+    return false;
+  }else{
+    return true;
+  }
+ }
 
 
 /**
